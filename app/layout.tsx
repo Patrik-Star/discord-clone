@@ -32,3 +32,9 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
+
+// As of thur 21 march, added these packages in advance:
+// npx shadcn-ui@latest add popover
+// npx shadcn-ui@latest add select
+// npx shadcn-ui@latest add avatar
