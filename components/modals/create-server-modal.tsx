@@ -60,7 +60,6 @@ export const CreateServerModal = () => {
 
             form.reset();
             router.refresh();
-
             onClose();
 
         } catch(error){
@@ -124,21 +123,14 @@ export const CreateServerModal = () => {
                                     <FormMessage />
                                 </FormItem>
                             )}/>
-
-                            
-
                         </div>
-
                         <DialogFooter className="bg-gray-100 px-6 py-4">
                                 <Button variant="primary" disabled={isLoading}>
                                     Create
                                 </Button>
                         </DialogFooter>
-
                     </form>
                 </Form>
-
-
             </DialogContent>
         </Dialog>
     )

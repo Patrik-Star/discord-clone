@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
 import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from 'react-hook-form'
+import { zodResolver } from "@hookform/resolvers/zod"
 
 import {
     Dialog,
@@ -44,7 +44,6 @@ export const InitialModal = () => {
     useEffect(() => {
       setIsMounted(true)
     }, [])
-    
     
     const form = useForm({
         resolver: zodResolver(formSchema),

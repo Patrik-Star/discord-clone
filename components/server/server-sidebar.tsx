@@ -1,8 +1,8 @@
-import { currentProfile } from "@/lib/current-profile";
-import { db } from "@/lib/db";
 import { ChannelType } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { ServerHeader } from "./server-header";
+import { currentProfile } from "@/lib/current-profile";
+import { db } from "@/lib/db";
 
 interface ServerSidebarProps {
     serverId: string;
@@ -11,7 +11,6 @@ interface ServerSidebarProps {
 export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
 
     const profile = await currentProfile();
-
     if (!profile) {
         return redirect("/")
     }
@@ -47,9 +46,6 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
     }
 
     const role = server.members.find((member) => member.profileId === profile.id)?.role;
-
-
-
 
     return (
         <div className="flex flex-col h-full text-primary w-full dark:bg-[#2b2d31] bg-[#f2f3f5]">
