@@ -1,19 +1,19 @@
 "use client"
+import { useState } from 'react';
+import { Check, Copy, RefreshCw } from 'lucide-react';
+import axios from 'axios';
 import {
     Dialog,
     DialogContent,
     DialogHeader,
     DialogTitle
-} from '@/components/ui/dialog'
+} from '@/components/ui/dialog';
 
 import { useModal } from "@/hooks/use-modal-store";
+import { useOrigin } from '@/hooks/use-origin';
 import { Label } from '@/components/ui/label';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
-import { Check, Copy, RefreshCw } from 'lucide-react';
-import { useOrigin } from '@/hooks/use-origin';
-import { useState } from 'react';
-import axios from 'axios';
 
 export const InviteModal = () => {
 
@@ -26,14 +26,14 @@ export const InviteModal = () => {
 
     const [copied, setCopied] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const inviteUrl = `${origin}/invite/${server?.inviteCode}`
+    const inviteUrl = `${origin}/invite/${server?.inviteCode}`;
 
     const onCopy = () => {
         navigator.clipboard.writeText(inviteUrl);
         setCopied(true);
 
         setTimeout(() => {
-            setCopied(false)
+            setCopied(false);
         }, 1000);
     }
 
@@ -42,12 +42,12 @@ export const InviteModal = () => {
             setIsLoading(true);
             const response = await axios.patch(`/api/servers/${server?.id}/invite-code`);
 
-            onOpen("invite", { server: response.data })
+            onOpen("invite", { server: response.data });
 
         } catch (error) {
-            console.log(error)
+            console.log(error);
         } finally {
-            setIsLoading(false)
+            setIsLoading(false);
         }
     }
 

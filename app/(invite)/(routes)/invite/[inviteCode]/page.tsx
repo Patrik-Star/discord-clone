@@ -3,7 +3,6 @@ import { db } from "@/lib/db";
 import { redirectToSignIn } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
-
 interface InviteCodePageProps {
     params: {
         inviteCode: string;
@@ -13,13 +12,14 @@ interface InviteCodePageProps {
 
 const InviteCodePage = async ({ params }: InviteCodePageProps) => {
 
+    // if inviting someone who doesnt have a profile, redirect to Sign in to create a profile
     const profile = await currentProfile();
     if (!profile) {
         return redirectToSignIn();
     }
 
     if (!params.inviteCode) {
-        return redirect('/')
+        return redirect('/');
     }
 
     const existingServer = await db.server.findFirst({
