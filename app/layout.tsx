@@ -34,7 +34,7 @@ export default function RootLayout({
 }
 
 
-// As of thur 21 march, added these packages in advance:
+// DONE: As of thur 21 mar, added these packages in advance:
 // npx shadcn-ui@latest add popover
 // npx shadcn-ui@latest add select
 // npx shadcn-ui@latest add avatar

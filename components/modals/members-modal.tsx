@@ -64,7 +64,7 @@ export const MembersModal = () => {
         } catch (error) {
             console.log(error); // TODO
         } finally {
-            setLoadingId("")
+            setLoadingId("");
         }
     }
 
