@@ -38,14 +38,14 @@ const formSchema = z.object({
     name: z.string().min(1, {
         message: "Channel name is required."
     }).refine(
-        name => name != 'general', {
+        name => (name.toLowerCase() != 'general'), {
         message: "Channel name cannot be 'general'"
     }
     ),
     type: z.nativeEnum(ChannelType)
 })
 
-// TODO: restrict 'General' as well
+// DONE: restrict 'General' as well
 
 export const CreateChannelModal = () => {
 
@@ -80,8 +80,10 @@ export const CreateChannelModal = () => {
             router.refresh();
             onClose();
 
-        } catch (error) {
-            console.log(error); // TODO
+        } catch (error: any) {
+            console.log(error);
+            alert(`CREATE_CHANNEL ERROR: 
+            \n${error}`)
         }
     }
 

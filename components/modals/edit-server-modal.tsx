@@ -73,7 +73,9 @@ export const EditServerModal = () => {
             onClose();
 
         } catch(error){
-            console.log(error); // TODO
+            console.log(error);
+            alert(`EDIT_CHANNEL ERROR: 
+            \n${error}`)
         }
     }
 

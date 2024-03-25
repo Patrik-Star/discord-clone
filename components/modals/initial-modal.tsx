@@ -64,7 +64,9 @@ export const InitialModal = () => {
             window.location.reload();
 
         } catch(error){
-            console.log(error); // TODO
+            console.log(error);
+            alert(`INITIAL_CREATE_SERVER ERROR: 
+            \n${error}`)
         }
     }
 

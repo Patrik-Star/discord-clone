@@ -62,7 +62,10 @@ export const MembersModal = () => {
             onOpen("members", { server: response.data });
 
         } catch (error) {
-            console.log(error); // TODO
+            console.log(error);
+            alert(`KICK_MEMBER ERROR: 
+            \n${error}`);
+
         } finally {
             setLoadingId("");
         }
@@ -83,7 +86,9 @@ export const MembersModal = () => {
             router.refresh();
             onOpen("members", { server: response.data });
         } catch (error) {
-            console.log(error); // TODO
+            console.log(error);
+            alert(`ROLE_CHANGE ERROR: 
+            \n${error}`)
         } finally {
             setLoadingId("")
         }
