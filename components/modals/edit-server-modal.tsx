@@ -73,7 +73,7 @@ export const EditServerModal = () => {
             onClose();
 
         } catch(error){
-            console.log(error);
+            console.log(error); // TODO
         }
     }
 

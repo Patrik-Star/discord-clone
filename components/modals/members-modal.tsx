@@ -12,9 +12,6 @@ import {
 } from '@/components/ui/dialog';
 
 import { useModal } from "@/hooks/use-modal-store";
-import { Label } from '@/components/ui/label';
-import { Input } from '../ui/input';
-import { Button } from '../ui/button';
 import { ServerWithMembersWithProfiles } from '@/types';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { UserAvatar } from '@/components/user-avatar';
@@ -32,11 +29,13 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { MemberRole } from '@prisma/client';
 import { useRouter } from 'next/navigation';
+import { ActionTooltip } from '../action-tooltip';
+
 
 const roleIconMap = {
     "GUEST": null,
-    "MODERATOR": <ShieldCheck className='h-4 w-4 ml-2 text-indigo-500' />,
-    "ADMIN": <ShieldAlert className='h-4 w-4 text-rose-500' />
+    "MODERATOR": <ShieldCheck className='h-4 w-4 ml-1 text-indigo-500' />,
+    "ADMIN": <ShieldAlert className='h-4 w-4 ml-1 text-rose-500' />
 }
 
 export const MembersModal = () => {
@@ -51,7 +50,6 @@ export const MembersModal = () => {
     const onKick = async (memberId: string) => {
         try {
             setLoadingId(memberId);
-
             const url = qs.stringifyUrl({
                 url: `/api/members/${memberId}`,
                 query: {
@@ -60,13 +58,12 @@ export const MembersModal = () => {
             });
 
             const response = await axios.delete(url);
-
             router.refresh();
-            onOpen("members", {server: response.data});
+            onOpen("members", { server: response.data });
 
         } catch (error) {
             console.log(error); // TODO
-        }finally{
+        } finally {
             setLoadingId("")
         }
     }
@@ -81,13 +78,13 @@ export const MembersModal = () => {
                 }
             });
 
-            const response = await axios.patch(url, { role})
+            const response = await axios.patch(url, { role })
 
             router.refresh();
-            onOpen("members", { server: response.data});
+            onOpen("members", { server: response.data });
         } catch (error) {
-            console.log(error);
-        }finally{
+            console.log(error); // TODO
+        } finally {
             setLoadingId("")
         }
     }
@@ -111,14 +108,16 @@ export const MembersModal = () => {
                             <UserAvatar src={member.profile.imageUrl} />
                             <div className="flex flex-col gap-y-1">
                                 <div className="text-xs font-semibold flex items-center gap-x-2">
-                                    {member.profile.name}
-                                    {roleIconMap[member.role]}
+                                    {member.profile.name !== "null null" ? member.profile.name : member.profile.email.substring(0, member.profile.email.indexOf("@"))}
+                                    <ActionTooltip side="right" align="center" label={member.role}>
+                                        {roleIconMap[member.role]}
+                                    </ActionTooltip>
                                 </div>
                                 <p className="text-xs text-zinc-500">
                                     {member.profile.email}
                                 </p>
                             </div>
-                            {server.profileId !== member.profileId && loadingId !== member.id && (
+                            {server.profileId !== member.profileId && loadingId !== member.id && ( // Dont render your own (Admin) settings 
                                 <div className="ml-auto">
                                     <DropdownMenu>
                                         <DropdownMenuTrigger>
@@ -152,7 +151,7 @@ export const MembersModal = () => {
 
                                             <DropdownMenuSeparator />
                                             <DropdownMenuItem onClick={() => onKick(member.id)}>
-                                                <Gavel className='w-4 h-4 mr-2'/>
+                                                <Gavel className='w-4 h-4 mr-2' />
                                                 Kick
                                             </DropdownMenuItem>
 
@@ -161,7 +160,7 @@ export const MembersModal = () => {
                                 </div>
                             )}
                             {loadingId === member.id && (
-                                <Loader2 className='animate-spin text-zinc-500 ml-auto w-4 h-4'/>
+                                <Loader2 className='animate-spin text-zinc-500 ml-auto w-4 h-4' />
                             )}
                         </div>
                     ))}
@@ -172,4 +171,4 @@ export const MembersModal = () => {
     )
 }
 
-//todo: add hover effect on Moderator and Admin Icons to show their respective role
+//DONE: add hover effect on Moderator and Admin Icons to show their respective role

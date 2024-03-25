@@ -61,7 +61,7 @@ export const CreateServerModal = () => {
             onClose();
 
         } catch(error){
-            console.log(error);
+            console.log(error); // TODO
         }
     }
 
