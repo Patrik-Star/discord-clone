@@ -34,6 +34,7 @@ export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
                 }}
                 onUploadError={(error: Error) => {
                     console.log(error)
+                    alert(`ON_UPLOAD_ERROR \n Invalid Image. Please try again`);
                 }}
             />
         </div>

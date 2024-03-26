@@ -18,7 +18,6 @@ export const DeleteServerModal = () => {
     const { isOpen, onClose, type, data } = useModal();
     const router = useRouter()
 
-
     const isModalOpen = isOpen && type === "deleteServer";
 
     const { server } = data;
@@ -35,7 +34,7 @@ export const DeleteServerModal = () => {
             router.refresh();
             router.push('/')
             // TODO: fix when you delete a server but navigation sidebar stays the same
-
+            
         } catch (error) {
             console.log(error); // TODO
         }finally{
