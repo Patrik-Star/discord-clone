@@ -1,19 +1,16 @@
 "use client"
-
-import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { Search } from "lucide-react";
 import {
-    Command,
     CommandDialog,
     CommandEmpty,
     CommandGroup,
     CommandInput,
     CommandItem,
-    CommandList,
-    CommandSeparator,
-    CommandShortcut,
+    CommandList
   } from "@/components/ui/command"
-import { useParams, useRouter } from "next/navigation";
+
 
 interface ServerSearchProps {
     data:{
@@ -60,7 +57,8 @@ const ServerSearch = ({data} : ServerSearchProps) => {
 
     return ( 
         <>
-        <button onClick={() => setOpen(true)} className="group px-2 py-2 rounded-md flex items-center gap-x-2 w-full hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition">
+        <button onClick={() => setOpen(true)} className="group px-2 py-2 rounded-md flex items-center gap-x-2 w-full 
+                                                        border border-zinc-500/30 hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition">
                 <Search className="w-4 h-4 text-zinc-500 dark:text-zinc-400"/>
             <p className="font-semibold text-sm text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition">
                 Search
