@@ -16,7 +16,7 @@ import { useRouter } from 'next/navigation';
 
 export const DeleteServerModal = () => {
     const { isOpen, onClose, type, data } = useModal();
-    const router = useRouter()
+    const router = useRouter();
 
     const isModalOpen = isOpen && type === "deleteServer";
 
@@ -36,7 +36,8 @@ export const DeleteServerModal = () => {
             // TODO: fix when you delete a server but navigation sidebar stays the same
             
         } catch (error) {
-            console.log(error); // TODO
+            console.log(error);
+            alert(`ON_UPLOAD_ERROR \n Invalid Image. Please try again`);
         }finally{
             setIsLoading(false);
         }
