@@ -113,7 +113,7 @@ export const MembersModal = () => {
                             <UserAvatar src={member.profile.imageUrl} />
                             <div className="flex flex-col gap-y-1">
                                 <div className="text-xs font-semibold flex items-center gap-x-2">
-                                    {member.profile.name !== "null null" ? member.profile.name : member.profile.email.substring(0, member.profile.email.indexOf("@"))}
+                                    {member.profile.name}
                                     <ActionTooltip side="right" align="center" label={member.role}>
                                         {roleIconMap[member.role]}
                                     </ActionTooltip>

@@ -4,7 +4,6 @@ import axios from "axios"
 import * as z from "zod";
 import { useForm } from 'react-hook-form'
 import { zodResolver } from "@hookform/resolvers/zod"
-
 import {
     Dialog,
     DialogContent,
@@ -38,7 +37,6 @@ const formSchema = z.object({
 
 export const InitialModal = () => {
     const [isMounted, setIsMounted] = useState(false);
-
     const router = useRouter();
 
     useEffect(() => {
@@ -125,9 +123,6 @@ export const InitialModal = () => {
                                     <FormMessage />
                                 </FormItem>
                             )}/>
-
-                            
-
                         </div>
 
                         <DialogFooter className="bg-gray-100 px-6 py-4">
@@ -135,11 +130,8 @@ export const InitialModal = () => {
                                     Create
                                 </Button>
                         </DialogFooter>
-
                     </form>
                 </Form>
-
-
             </DialogContent>
         </Dialog>
     )

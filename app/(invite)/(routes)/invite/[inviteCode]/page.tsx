@@ -61,5 +61,3 @@ const InviteCodePage = async ({ params }: InviteCodePageProps) => {
 }
 
 export default InviteCodePage;
-
-// TODO: if new member name is 'null null', give them a proper name based on email address

@@ -33,7 +33,9 @@ export const LeaveServerModal = () => {
             router.push('/');
 
         } catch (error) {
-            console.log(error); // TODO
+            console.log(error);
+            alert(`LEAVE_SERVER ERROR: 
+            \n${error}`);
         }finally{
             setIsLoading(false);
         }

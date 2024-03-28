@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { MemberRole } from "@prisma/client";
 import { NextResponse } from "next/server";
 
+// --- Create a channel ---
 export async function POST(req: Request) {
     try {
         const profile = await currentProfile();
