@@ -28,7 +28,7 @@ const ServerSearch = ({ data }: ServerSearchProps) => {
     const router = useRouter();
     const params = useParams();
 
-    // Add keyboard event listener for CRTL | CMD + k to open search bar
+    // Keyboard event listener for CRTL | CMD + k to open search bar
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
             if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
@@ -57,14 +57,12 @@ const ServerSearch = ({ data }: ServerSearchProps) => {
 
     return (
         <>
-            <button onClick={() => setOpen(true)} className="group px-2 py-2 rounded-md flex items-center gap-x-2 w-full 
-                                                        border border-zinc-500/30 hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition">
+            <button onClick={() => setOpen(true)} className="group px-2 py-2 rounded-md flex items-center gap-x-2 w-fullhover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition">
                 <Search className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
                 <p className="font-semibold text-sm text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition">
                     Search
                 </p>
-                <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded 
-                                border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground ml-auto">
+                <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground ml-auto">
                     <span className="text-xs">CTRL K</span>
                 </kbd>
             </button>
