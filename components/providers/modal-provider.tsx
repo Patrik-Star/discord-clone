@@ -36,4 +36,6 @@ export const ModalProvider = () => {
     )
 }
 
+// TODO: make a Toast provider to display acknowledgment to user actions - copy this provider and modals 
+
 //Hydration error happens when if there is one state while its being rendered on the server and another state when its being rendered on the client
