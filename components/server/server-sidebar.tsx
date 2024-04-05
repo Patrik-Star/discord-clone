@@ -167,3 +167,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
         </div>
     )
 }
+
+// TODO: add other channel types (eg: gaming, memes, chill etc)
+// This will be a huge task. Need to edit: Prisma schema 'ChannelType'
+// also gaming section can include both text, video and audio channels
