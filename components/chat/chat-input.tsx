@@ -45,7 +45,7 @@ const ChatInput = ({ apiUrl, query, name, type }: ChatInputProps) => {
             await axious.post(url, values);
 
         }catch(error){
-            console.error(error)
+            console.error(error) // TODO fix error handling
         }
     }
 
