@@ -3,7 +3,7 @@ import { db } from '@/lib/db';
 import { redirect } from "next/navigation";
 import { InitialModal } from "@/components/modals/initial-modal";
 
-
+// TODO: if the DB is down, address this.
 const SetupPage = async () => {
     const profile = await initialProfile();
 
