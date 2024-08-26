@@ -1,4 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Tech stack / architecture
+- NextJS with TS, server-actions
+- Tailwindcss
+- Shadcn UI component library
+- Lucid Icons
+- MySQL Database running on Avien (free service)
+- Clerk authentication
+- uploadthing (for uploading profile/server pics)
+- Vercel
 
 ## Getting Started
 
