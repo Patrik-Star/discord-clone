@@ -9,6 +9,11 @@
 - `Uploadthing` - (For uploading profile/server pics)
 - `Vercel` - (Deployment, CICD)
 - `prisma client` - ORM
+- Other Packages include:
+    -  `Next Router`
+    -  `Zod forms / react-hook-form`
+    - `Axios`
+    - `zustand`
 
 ## Getting Started
 
