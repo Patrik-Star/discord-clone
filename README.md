@@ -1,13 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 ## Tech stack / architecture
-- NextJS with TS, server-actions
-- Tailwindcss
-- Shadcn UI component library
-- Lucid Icons
-- MySQL Database running on Avien (free service)
-- Clerk authentication
-- uploadthing (for uploading profile/server pics)
-- Vercel
+- `NextJS` with TS, server-actions
+- `Tailwindcss` - CSS utility framework
+- `Shadcn UI` - component library
+- `Lucid` - Icons
+- `MySQL` Database running on `Avien` (free service)
+- `Clerk` - Authentication
+- `Uploadthing` - (For uploading profile/server pics)
+- `Vercel` - (Deployment, CICD)
+- `prisma client` - ORM
 
 ## Getting Started
 
@@ -25,11 +26,24 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## database
+#### Database
 
 The database is MySQL database running on a free service called Avien. Its essentially just a Virtual machine to run any Database you want. 
 
 Avien: https://console.aiven.io/account/a49d396d1137/project/patrik-discord-clone/services
+
+To view your database tables using Prisma:
+
+```bash
+npx prisma studio 
+```
+
+Use the following command to view all the available commands using Prisma.
+```bash 
+npx prisma help
+```
+
+
 
 
 ## Deploy on Vercel
