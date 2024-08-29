@@ -1,6 +1,6 @@
 
 ## Tech stack / architecture
-- `NextJS` with TS, server-actions
+- `NextJS` with TS, server-actions, REST API
 - `Tailwindcss` - CSS utility framework
 - `Shadcn UI` - component library
 - `Lucid` - Icons
@@ -17,7 +17,15 @@
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies.
+
+```bash
+npm i
+```
+
+Then configure your .env file.
+
+Next, run the development server:
 
 ```bash
 npm run dev
