@@ -18,6 +18,7 @@ export const currentProfile = async () => {
 
     return profile;
   } catch (error) {
+    console.error(error);
     return redirect("/maintenance");
   }
 };

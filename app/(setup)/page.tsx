@@ -3,7 +3,6 @@ import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { InitialModal } from "@/components/modals/initial-modal";
 
-// TODO: if the DB is down, address this.
 const SetupPage = async () => {
   try {
     const profile = await initialProfile();
@@ -22,11 +21,16 @@ const SetupPage = async () => {
     if (server) {
       return redirect(`/servers/${server.id}`);
     }
+
+    // If user doesnt own or belong to any server, show the initial modal
+    return <InitialModal />;
+
+
   } catch (error) {
+    console.error(error);
     return redirect('/maintenance');
   }
 
-  return <InitialModal />;
 };
 
 export default SetupPage;
