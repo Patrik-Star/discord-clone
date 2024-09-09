@@ -1,18 +1,23 @@
-import { auth } from "@clerk/nextjs"
-import {db } from "@/lib/db"
+import { auth } from "@clerk/nextjs";
+import { db } from "@/lib/db";
+import { redirect } from "next/navigation";
 
 export const currentProfile = async () => {
+  try {
     const { userId } = auth();
 
     if (!userId) {
-        return null;
+      return null;
     }
 
     const profile = await db.profile.findUnique({
-        where:{
-            userId
-        }
+      where: {
+        userId,
+      },
     });
 
-    return profile
-}
+    return profile;
+  } catch (error) {
+    return redirect("/maintenance");
+  }
+};
