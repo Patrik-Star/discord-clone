@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { InitialModal } from "@/components/modals/initial-modal";
 
 const SetupPage = async () => {
-  try {
+  // try {
     const profile = await initialProfile();
 
     // finds all servers where this user is a member
@@ -26,10 +26,10 @@ const SetupPage = async () => {
     return <InitialModal />;
 
 
-  } catch (error) {
-    console.error(error);
-    return redirect('/maintenance');
-  }
+  // } catch (error) {
+  //   console.error(error);
+  //   return redirect('/maintenance');
+  // }
 
 };
 

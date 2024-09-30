@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 
 export const currentProfile = async () => {
-  try {
+  // try {
     const { userId } = auth();
 
     if (!userId) {
@@ -17,8 +17,8 @@ export const currentProfile = async () => {
     });
 
     return profile;
-  } catch (error) {
-    console.error(error);
-    return redirect("/maintenance");
-  }
+  // } catch (error) {
+  //   console.error(error);
+  //   return redirect("/maintenance");
+  // }
 };
