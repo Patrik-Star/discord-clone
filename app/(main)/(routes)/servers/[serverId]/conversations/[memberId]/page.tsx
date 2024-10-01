@@ -10,7 +10,7 @@ import { redirect } from "next/navigation";
 interface MemberIdPageProps {
     params: {
         memberId: string;
-        serverId: string
+        serverId: string;
     }
 }
 
@@ -44,8 +44,6 @@ const MemberIdPage = async ({params}: MemberIdPageProps) => {
 
     const { memberOne, memberTwo } = conversation;
     const otherMember = memberOne.profileId === profile.id ? memberTwo : memberOne
-
-
 
     return ( 
         <div className="bg-white dark:bg-[#313338] flex flex-col h-full ">
