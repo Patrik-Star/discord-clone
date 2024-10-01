@@ -18,7 +18,7 @@ interface ChatMessagesProps {
   chatId: string;
   apiUrl: string;
   socketUrl: string;
-  sockerQuery: Record<string, string>;
+  socketQuery: Record<string, string>;
   paramkey: "channelId" | "conversationId";
   paramValue: string;
   type: "channel" | "conversation";
@@ -36,7 +36,7 @@ const ChatMessages = ({
   chatId,
   apiUrl,
   socketUrl,
-  sockerQuery,
+  socketQuery,
   paramkey,
   paramValue,
   type,
@@ -120,7 +120,7 @@ const ChatMessages = ({
                 currentMember={member}
                 isUpdated={message.updatedAt !== message.createdAt}
                 socketUrl={socketUrl}
-                socketQuery={sockerQuery}
+                socketQuery={socketQuery}
               />
             ))}
           </Fragment>
