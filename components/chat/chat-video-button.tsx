@@ -1,6 +1,5 @@
 "use client";
 import qs from "query-string"
-import { useEffect, useState } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 import { Video, VideoOff} from "lucide-react";
@@ -8,18 +7,6 @@ import { Video, VideoOff} from "lucide-react";
 import  {ActionTooltip} from "@/components/action-tooltip";
 
 export const ChatVideoButton =() => {
-    // const router = useRouter();
-    // const pathname = usePathname();
-    // const searchParams = useSearchParams();
-
-    // const [video, setVideo] = useState(true);
-
-    // const handleClick = () => {
-    //     const newSearchParams = new URLSearchParams(searchParams.toString());
-    //     newSearchParams.set("video", (!video).toString());
-    //     router.push(`${pathname}?${newSearchParams.toString()}`);
-    //     setVideo(!video);
-    // }
     const pathName = usePathname();
     const router = useRouter();
     const searchParams = useSearchParams();
